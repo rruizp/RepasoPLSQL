@@ -12,6 +12,8 @@ begin
 end;
 $ControlFechaPruebaVers$ LANGUAGE plpgsql;
 
+////////// No tiene sentido usar un cursor cuando la select devuelve una sola fila
+
 CREATE TRIGGER ControlFechaPruebaVer
 BEFORE INSERT OR UPDATE ON versiones
 FOR EACH ROW
@@ -30,6 +32,8 @@ begin
 	end loop;
 end;
 $ControlFechaPruebaExp$ LANGUAGE plpgsql;
+
+////////// El mensaje de error debería ser más claro: eso no es lo que se está comprobando
 
 CREATE TRIGGER ControlFechaPruebaEx
 BEFORE UPDATE ON experimentos
