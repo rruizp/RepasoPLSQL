@@ -19,6 +19,9 @@ BEGIN
 END;
 $MostrarCabecera$ LANGUAGE plpgsql;
 
+////////  return en una función siempre es la última instrucción que se ejecuta, puesto que devuelve el control al programa que la llamó.
+////////  Ni siquiera lo has probado
+
 CREATE OR REPLACE FUNCTION MostrarDatos(p_codigoestancia estancias.codigo%type) RETURNS VARCHAR AS $MostrarDatos$
 DECLARE
 	v_nombre    personas.nombre%type;
